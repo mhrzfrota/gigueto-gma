@@ -111,6 +111,34 @@ if (counters.length) {
   }
 }
 
+/* ---------- FAQ (acordeão) ---------- */
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const button = item.querySelector(".faq-q");
+  const sign = item.querySelector(".faq-sign");
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    const isOpen = item.classList.contains("is-open");
+
+    // Mantém apenas um item aberto por vez.
+    faqItems.forEach((other) => {
+      other.classList.remove("is-open");
+      const btn = other.querySelector(".faq-q");
+      const sgn = other.querySelector(".faq-sign");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+      if (sgn) sgn.textContent = "+";
+    });
+
+    if (!isOpen) {
+      item.classList.add("is-open");
+      button.setAttribute("aria-expanded", "true");
+      if (sign) sign.textContent = "−";
+    }
+  });
+});
+
 /* ---------- Ano no rodapé ---------- */
 const yearEl = document.querySelector("[data-year]");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
