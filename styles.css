@@ -271,6 +271,12 @@ p {
   letter-spacing: 0.03em;
 }
 
+img.brand-name {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
