@@ -347,6 +347,11 @@ img.brand-name {
   border-bottom: 1px solid var(--line);
 }
 
+#hero-title {
+  white-space: nowrap;
+  font-size: clamp(36px, 5vw, 66px);
+}
+
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1504,10 +1509,6 @@ img.brand-name {
   }
 
   .header-cta {
-    display: none;
-  }
-
-  .hero h1 br {
     display: none;
   }
 
